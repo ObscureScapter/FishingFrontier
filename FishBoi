@@ -1,3 +1,4 @@
+wait(2)
 --  services
 
 local Players   = game:GetService("Players")
@@ -21,7 +22,7 @@ local isFishing = false
 --  functions
 
 if game.PlaceId ~= 7773766301 then
-    queue_on_teleport(game:HttpGet("https://raw.githubusercontent.com/ObscureScapter/FishingFrontier/main/AutoFarmy"))
+    queue_on_teleport(game:HttpGet("https://raw.githubusercontent.com/ObscureScapter/FishingFrontier/main/FishBoi"))
 
     TeleportService:SetTeleportGui(game:GetObjects("rbxassetid://8249641340")[1])
     TeleportService:Teleport(7773766301)
