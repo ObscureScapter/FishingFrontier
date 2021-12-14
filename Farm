@@ -39,7 +39,9 @@ else
     end)
 end
 
-Player:WaitForChild("PlayerGui"):WaitForChild("ResetData"):Destroy()
+repeat wait(0) until Player:FindFirstChild("PlayerGui") and Player.PlayerGui:FindFirstChild("ResetData")
+Player.PlayerGui.ResetData:Destroy()
+
 mainWindow:Toggle("Auto-Fish", isFishing, function(bool)
     isFishing = bool
 end)
