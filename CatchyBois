@@ -53,9 +53,9 @@ local function doChar(char)
                             DataStreams.processGameItemSold:InvokeServer("SellEverything")
                         end
 
-                        wait(2)
+                        wait(1.5)
                     end
-                    
+
                     DataStreams.FishBiting:InvokeServer()
                 end
             end)
