@@ -16,8 +16,13 @@ local isFishing = false
 local isSelling = true
 local fishCount = 0
 local rodHook   = nil
+local fishDebounce  = 2
 
 --  functions
+
+mainWindow:Slider("Catch Cooldown", 1, 5, fishDebounce, function(num)
+    fishDebounce    = num
+end)
 
 mainWindow:Toggle("Auto-Fish", isFishing, function(bool)
     isFishing = bool
@@ -32,6 +37,14 @@ end)
 
 mainWindow:Toggle("Auto-Sell", isSelling, function(bool)
     isSelling   = bool
+end)
+
+mainWindow:Button("Break Server", function()
+    
+end)
+
+mainWindow:Button("Break Server 2.0", function()
+    
 end)
 
 local function findRod()
@@ -53,7 +66,7 @@ local function doChar(char)
                             DataStreams.processGameItemSold:InvokeServer("SellEverything")
                         end
 
-                        wait(1.5)
+                        wait(fishDebounce)
                     end
 
                     DataStreams.FishBiting:InvokeServer()
